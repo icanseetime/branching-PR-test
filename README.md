@@ -25,6 +25,7 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
+        <li><a href="#become-a-collaborator">Become a collaborator</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
@@ -32,7 +33,7 @@
       <a href="#contribute-to-the-project">Contribute to the project</a>
       <ul>
         <li><a href="#setup">Setup</a></li>
-        <li><a href="#pull-requests">Pull requests</a></li>
+        <li><a href="#pull-request">Pull request</a></li>
       </ul>
     </li>
     <li>
@@ -48,15 +49,20 @@
 
 ## Getting started
 
-Below you will find information about how to install and set up the project on your local machine.
+### Become a collaborator
+
+1. Ask for permission to join the repo by contacting the project maintainer at imgjeits@stud.ntnu.no and ask to be added as a collaborator
+2. Accept invitation
 
 ### Installation
 
-1. Navigate to a folder where you would like to store the repo
-2. Clone the repo
+1. Open your terminal
+2. Navigate to a folder on your computer where you would like to store the repo
+3. Clone the repo by typing the following
     ```sh
     git clone https://github.com/icanseetime/branching-PR-test.git
     ```
+4. Open the local repository in your preferred editor
 
 ---
 
@@ -65,30 +71,33 @@ Below you will find information about how to install and set up the project on y
 ### Setup
 
 1. Go to Github and find an issue that is assigned to you
-2. Create a new branch that follows the naming convention that is explained in [this](#branching) table
-    - ⚠ Make sure that the new branch is branching out from the **develop branch**
-3. Move the issue on the Kanban board from _To do_ to _In progress_
-4. Get shit done.
+2. Create a new **feature** branch in your local repository that follows the naming conventions explained in [this table](#branching)
+    - ⚠ Make sure that the new branch is branching out from the **develop** branch
+3. Publish your branch
+4. Move the issue on the Kanban board from _To do_ to _In progress_
+5. Work on your issue until you are done and then move to the [pull request](#pull-requests) section
 
-### Pull requests
+### Pull request
 
 1. Finish commiting all the changes to your branch
-    - Make sure you have tested that everything is working before you create a PR
+    - Make sure you have tested that everything is working before the next step
 2. Go to [the Github repo](https://github.com/icanseetime/branching-PR-test) and click the Pull request tab
 3. Create a new pull request and make these changes to the setup:
     - Make sure the base branch is **develop**
     - Make sure the compare branch is the **feature** branch you have been working on
-    - Check that there is a green check mark and the text "Able to merge".
-        - If there are conflicts, you should figure out what the conflicts are, and how to solve them.
+    - Check that there is a green check mark and the text "Able to merge"
+        - If there are conflicts, you should figure out what the conflicts are, and how to solve them
     - Write a title for the pull request that explains what has been done
         - Optional step: Write a comment if you have something more to say about the work, that can not be summarized in the title
     - Add a reviewer
     - Create the pull request
 4. Wait for the reviewer to review your request
 5. When the reviewer:
-    - approves your PR: move to step 6.
-    - requests changes: make the suggested changes, commit them to the branch, update the PR and request a re-review.
-6. At the end of the pull request, you should merge the pull request from inside the PR.
+    - approves your PR: continue with step 6
+    - requests changes: make the suggested changes, commit them to the branch, update the pull request and request a re-review
+6. Merge the pull request
+7. Delete branch
+8. Move the issue on the Kanban board from _In progress_ to _Done_
 
 ---
 
@@ -98,7 +107,7 @@ Below you will find information about how to install and set up the project on y
 | --------------- | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **master/main** | What the users see / production branch. This branch automatically deploys when something is merged.      | Always named **_master_** or **_main_**                                                                                                                                                                                                   |
 | release         | 1 branch per new release of the site. Used to test the new release before merging into master to deploy. | Named using [semantic versioning](https://semver.org/), e.g.: **_v1.0.0_**                                                                                                                                                                |
-| **develop**     | Where the current work happens. Should be the default branch for cloning the repo.                       | Always named **_develop_**                                                                                                                                                                                                                |
+| **develop**     | Where the current work happens.                                                                          | Always named **_develop_**                                                                                                                                                                                                                |
 | **feature**     | 1 branch per new feature. (1 issue = 1 feature)                                                          | Should be named **_feature/{ID}-{name}_**, where the _ID_ is the ID of the related issue, and the _name_ is the name of the issue you are working on. E.g.: _feature/1524-shopping-cart_. Issue name can be shortened if it is very long. |
 | bugfix          | 1 branch per bug fix. Used when fixing errors (issues with bug tag)                                      | Should be named **_bugfix/{name}_**, where the _name_ is the name of the issue you are working on. E.g.: _bugfix/spelling-errors-in-menu_.                                                                                                |
 
